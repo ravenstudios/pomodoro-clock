@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="wrapper"><!-- wrapper -->
+      <h1>Pomodoro Timer</h1>
+      <div class="controles"><!-- contorles -->
+
+        <div class="workTimer  "><!-- workTimer -->
+
+            <p class="controlTitle">Work Timer</p>
+            <!-- <p class="button inline control minus" id="workTimerMinus">-</p> -->
+            <button class="button" type="button" id="workTimerMinus">-</button>
+            <p class="inline control" id="workTimerAmmount">1</p>
+            <button class="button" type="button" id="workTimerPlus">+</button>
+            <!-- <p class="button inline control" id="workTimerPlus">+</p> -->
+
+
+        </div><!-- !workTimer -->
+        <div class="clock">
+          <p class="clockDisplay" id="clock">30:00</p>
+        </div>
+
+        <div class="breakTimer "><!-- breakTimer -->
+
+            <p class="controlTitle">Break Timer</p>
+            <!-- <p class="button inline control minus" id="breakTimerMinus">-</p> -->
+            <button class="button" type="button" id="breakTimerMinus">-</button>
+            <p class="inline control" id="breakTimerAmmount">1</p>
+            <button class="button" type="button" id="breakTimerPlus">+</button>
+            <!-- <p class="button inline control" id="breakTimerPlus">+</p> -->
+
+
+        </div><!-- !breakTimer -->
+
+      </div><!-- !contorles -->
+
+      <br>
+
+    </div><!-- !wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js.js" type="text/javascript"></script>
+
+  </body>
+</html>

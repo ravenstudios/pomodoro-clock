@@ -1,0 +1,118 @@
+.wrapper{
+text-align: center;
+}
+
+body{
+
+  background-color: purple;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+.controles{
+
+  width:auto;
+  margin: auto;
+
+
+  /*margin: auto;*/
+
+  display: block;
+
+  width: 1000px;
+
+
+}
+
+.control{
+  font-size: 40px;
+  /*padding-left: 25px;*/
+  display: inline-block;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: -50px;
+  /*margin-left: 20px;*/
+
+
+}
+
+.button{
+  color: white;
+  background-color: black;
+  width: 30px;
+  height: 30px;
+  border: solid 3px black;
+  border-radius: 100%;
+  font-size: 15px;
+}
+
+.inline{
+  /*float: left;*/
+  display: inline-block;
+}
+
+.controlTitle{
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+  font-size: 40px;
+  margin: auto;
+  margin-top: 80px;
+}
+
+/*.minus{
+  height: 40px;
+  padding-top:20px;
+  font-size: 60px;
+
+}*/
+
+.workTimer{
+  display: inline-block;
+  text-align: center;
+  width: 250px;
+  height: 250px;
+  background-color: yellow;
+  border: solid 3px black;
+  border-radius: 100%;
+  /*float: left;*/
+}
+
+.clock{
+  display: inline-block;
+
+  margin: auto;
+  display:inline-block;
+  text-align: center;
+  width: 250px;;
+  height: 250px;;
+  background-color: yellow;
+  border: solid 3px black;
+  border-radius: 100%;
+}
+
+.breakTimer{
+  display: inline-block;
+  text-align: center;
+  width: 250px;
+  height: 250px;
+  background-color: yellow;
+  border: solid 3px black;
+  border-radius: 100%;
+  /*float: right;*/
+}
+
+.clockDisplay{
+  text-align: center;
+  font-size: 60px;
+  /*margin: auto;
+  margin-top: -200px;*/
+}
+
+
+.clear{
+  clear: both;
+}
+
+h1{
+  font-size: 50px;
+  font-family: 'Gloria Hallelujah', cursive;
+}
