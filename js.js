@@ -1,66 +1,80 @@
 console.log("pomodoro");
 
-let workTimer = 1;
-let breakTimer = 1;
-let clock = 0;
+let workTimer = 25;
+let breakTimer = 5;
+let clock;
 let timerIsRunning = false;
+let minutes;
+let seconds = 10;
+let displayString;
+let timeToWork = true;
+
 $(()=>{
   console.log("jquery");
 
 
   $("#workTimerMinus").click(()=>{
-    console.log("click");
-    if(workTimer > 1){
-      workTimer--;
-      $("#workTimerAmmount").html(workTimer);
+    if(!timerIsRunning){
+      if(workTimer > 1){
+        workTimer--;
+        $("#workTimerAmmount").html(workTimer);
+      }
     }
+
   });
 
   $("#workTimerPlus").click(()=>{
-    workTimer++;
-    $("#workTimerAmmount").html(workTimer);
+    if(!timerIsRunning){
+      workTimer++;
+      $("#workTimerAmmount").html(workTimer);
+    }
+
   });
 
   $("#breakTimerMinus").click(()=>{
-    if(breakTimer > 1){
-      breakTimer--;
-      $("#breakTimerAmmount").html(breakTimer);
+    if(!timerIsRunning){
+      if(breakTimer > 1){
+        breakTimer--;
+        $("#breakTimerAmmount").html(breakTimer);
+      }
     }
+
   });
 
   $("#breakTimerPlus").click(()=>{
-    breakTimer++;
-    $("#breakTimerAmmount").html(breakTimer);
+    if(!timerIsRunning){
+      breakTimer++;
+      $("#breakTimerAmmount").html(breakTimer);
+    }
+
   });
 
   $("#clock").click(()=>{
-    breakTimer++;
-    timer();
+
+    if(timerIsRunning){
+      timerIsRunning = false;
+      clearInterval(clock);
+    }
+    else{
+      timerIsRunning = true;
+      seconds = 0;
+      minutes = workTimer;
+      timer();
+    }
+
 
   });
 });
 
 function timer(){
 
+
   //if timer is running than pause and let user change timer settings
   //if settings have changed then restart timer with those setings,
   //else resume timer
-  let minutes;
-  let seconds = 10;
-  let displayString;
-  let timeToWork = true;
 
-    minutes = 0;
-
-
-  let clock = setInterval(()=>{
-    // if(seconds <= 2 && minutes <= 0){
-    //   $("#clock").html("0:00");
-    //   clearInterval(clock);
-    //
-    // }
-
-    if(timeToWork){
+  clock = setInterval(()=>{
+      if(timeToWork){//workTimer is running
 
       if(seconds <= 2 && minutes <= 0){
         timeToWork = false;
@@ -80,7 +94,7 @@ function timer(){
         displayString = minutes + ":" + seconds;
       }
     }
-    else{
+    else{//break timer is running
       if(minutes === breakTimer){
         timeToWork = true;
         minutes = workTimer;
@@ -101,8 +115,16 @@ function timer(){
   }
 
 
-
     $("#clock").html(displayString);
   }, 1000);
 
+}
+
+function annimation() {
+  let color1 = "rgb(255, 0, 0),";
+  let color2 = "rgb(0, 255, 0),";
+  let color3 = "rgb(0, 0, 255)";
+  $(".clock").css("background", "radial-gradient(circle," + color1 + color2 + color3 + ")");
+  //$(".clock")css("background", "radial-gradient(circle," + color1 + color2 + color3 + ")");
+    //background: radial-gradient(circle, rgb(0, 0, 255), yellow, green); /* Standard syntax */
 }
